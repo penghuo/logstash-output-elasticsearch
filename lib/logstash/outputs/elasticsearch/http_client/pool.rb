@@ -471,7 +471,7 @@ module LogStash; module Outputs; class ElasticSearch; class HttpClient;
     end
 
     def set_new_major_version(version)
-      @maximum_seen_major_version = version
+      @maximum_seen_major_version = 7
       if @maximum_seen_major_version >= 6
         @logger.warn("Detected a 6.x and above cluster: the `type` event field won't be used to determine the document _type", :es_version => @maximum_seen_major_version)
       end
